@@ -23,7 +23,9 @@ function Server (doLogRequests) {
     routes.order(req, res, next);
   });
   app.post('/feedback', function (req, res, next) {
+    console.log('running feedback', req.body);
     routes.feedback(req, res, next);
+    console.log('finish feedback', req.body);
   });
 
   var server = http.createServer(app);
